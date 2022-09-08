@@ -9,7 +9,7 @@
   </head>
   <body>
     <div class="step--sequencer--container">
-      <div class="notes--label">
+      <!-- <div class="notes--label">
         <div>C</div>
         <div>D</div>
         <div>E</div>
@@ -18,7 +18,8 @@
         <div>A</div>
         <div>B</div>
         <div>C</div>
-      </div>
+      </div> -->
+
       <div class="step--sequencer">
         <div class="note--C3">
           <input type="checkbox" id="C3" />
@@ -90,16 +91,6 @@
           <input type="checkbox" id="B3" />
           <input type="checkbox" id="B3" />
         </div>
-        <div class="note--C4">
-          <input type="checkbox" id="C4" />
-          <input type="checkbox" id="C4" />
-          <input type="checkbox" id="C4" />
-          <input type="checkbox" id="C4" />
-          <input type="checkbox" id="C4" />
-          <input type="checkbox" id="C4" />
-          <input type="checkbox" id="C4" />
-          <input type="checkbox" id="C4" />
-        </div>
       </div>
       <!-- <div class="steps--label">
         <div>1</div>
@@ -112,16 +103,47 @@
         <div>8</div>
       </div> -->
       <div class="transport">
-        <button class="rec">REC</button>
+        <button class="pause">PAUSE</button>
         <button class="stop">STOP</button>
         <button class="play">PLAY</button>
         <button class="bpm">
           BPM
           <form class="bpm--form">
             <input type="number" class="bpm--input" />
-            <input type="submit" value="Send" class="bpm--btn" />
+            <input type="submit" value="Go" class="bpm--btn" />
           </form>
         </button>
+      </div>
+      <div class="ui--note-scale">
+        <form class="ui--note-form">
+          <label for="notes">Choose a note:</label>
+          <select class="ui--note" name="notes" id="notes">
+            <option value="C">C</option>
+            <option value="C#">C#</option>
+            <option value="D">D</option>
+            <option value="D#">D#</option>
+            <option value="E">E</option>
+            <option value="F">F</option>
+            <option value="F#">F#</option>
+            <option value="G">G</option>
+            <option value="G#">G#</option>
+            <option value="A">A</option>
+            <option value="A#">A#</option>
+            <option value="B">B</option>
+          </select>
+          <br /><br />
+          <!-- <input type="submit" value="Go" /> -->
+        </form>
+
+        <form>
+          <label for="scale">Choose scale:</label>
+          <select class="ui--scale" name="scale" id="scale">
+            <option value="Major">Major</option>
+            <option value="Minor">Minor</option>
+          </select>
+          <br /><br />
+          <!-- <input type="submit" value="Go" /> -->
+        </form>
       </div>
     </div>
 
