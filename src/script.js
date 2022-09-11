@@ -22,7 +22,7 @@ const rowB3 = Array.from(rowsB3.children);
 
 // Buttons
 const playBtn = document.querySelector(".play");
-const stopBtn = document.querySelector(".stop");
+const pauseBtn = document.querySelector(".pause");
 const bpmInput = document.querySelector(".bpm--input");
 const bpmForm = document.querySelector(".bpm--form");
 const noteUserInput = document.querySelector(".ui--note");
@@ -73,7 +73,7 @@ const play = function () {
 //   Tone.Transport.pause();
 // };
 
-const stop = function () {
+const pause = function () {
   Tone.Transport.stop();
 };
 
@@ -164,6 +164,7 @@ Tone.Transport.scheduleRepeat((time) => {
 
 window.addEventListener("load", function () {
   createScale();
+  setBPM();
   userBaseScale = createMajorScale(chromaticScaleArray);
 });
 
@@ -196,11 +197,16 @@ playBtn.addEventListener("click", function () {
   play();
 });
 
-stopBtn.addEventListener("click", function () {
-  stop();
+pauseBtn.addEventListener("click", function () {
+  pause();
 });
 
 bpmForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  setBPM();
+});
+
+bpmForm.addEventListener("change", function (e) {
   e.preventDefault();
   setBPM();
 });
